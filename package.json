@@ -1,6 +1,6 @@
 {
   "name": "@pexcard_engineering/mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MCP server for PEX API - access business accounts, cards, transactions, and more",
   "type": "module",
   "main": "dist/index.js",
