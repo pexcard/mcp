@@ -3,10 +3,7 @@ trigger:
     include:
       - main
 
-pr:
-  branches:
-    include:
-      - main
+pr: none
 
 pool:
   vmImage: "ubuntu-latest"
@@ -25,6 +22,9 @@ steps:
 
   - script: npm audit --audit-level=high
     displayName: "Security audit"
+
+  - script: npm pack --dry-run
+    displayName: "Preview package contents"
 
   - script: npm pack
     displayName: "Create npm tarball"
