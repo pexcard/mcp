@@ -2,19 +2,6 @@
 
 A Model Context Protocol (MCP) server that provides access to the [PEX Card External API](https://developer.pexcard.com/). Use this server to let AI assistants like Claude interact with your PEX business account, cards, transactions, and more.
 
-## Installation
-
-```bash
-npx @pexcard_engineering/mcp
-```
-
-Or install globally:
-
-```bash
-npm install -g @pexcard_engineering/mcp
-pex-mcp-server
-```
-
 ## Getting Your PEX API Token
 
 To use the PEX MCP Server, you need a PEX API token. Follow these steps to generate one:
