@@ -11,20 +11,11 @@ pr:
 pool:
   vmImage: "ubuntu-latest"
 
-strategy:
-  matrix:
-    Node18:
-      nodeVersion: "18"
-    Node20:
-      nodeVersion: "20"
-    Node22:
-      nodeVersion: "22"
-
 steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: $(nodeVersion)
-    displayName: "Use Node.js $(nodeVersion)"
+      versionSpec: "22"
+    displayName: "Use Node.js 22"
 
   - script: npm ci
     displayName: "Install dependencies"
@@ -34,3 +25,17 @@ steps:
 
   - script: npm audit --audit-level=high
     displayName: "Security audit"
+
+  - task: CopyFiles@2
+    displayName: "Copy build output"
+    inputs:
+      sourceFolder: $(Build.SourcesDirectory)/dist
+      contents: "**"
+      targetFolder: $(Build.ArtifactStagingDirectory)
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish artifacts"
+    inputs:
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+      ArtifactName: "drop"
+      publishLocation: "Container"
