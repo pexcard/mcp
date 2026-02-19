@@ -26,11 +26,14 @@ steps:
   - script: npm audit --audit-level=high
     displayName: "Security audit"
 
+  - script: npm pack
+    displayName: "Create npm tarball"
+
   - task: CopyFiles@2
-    displayName: "Copy build output"
+    displayName: "Copy tarball to staging"
     inputs:
-      sourceFolder: $(Build.SourcesDirectory)/dist
-      contents: "**"
+      sourceFolder: $(Build.SourcesDirectory)
+      contents: "*.tgz"
       targetFolder: $(Build.ArtifactStagingDirectory)
 
   - task: PublishBuildArtifacts@1
