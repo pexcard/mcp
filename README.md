@@ -5,13 +5,13 @@ A Model Context Protocol (MCP) server that provides access to the [PEX Card Exte
 ## Installation
 
 ```bash
-npx pex-mcp-server
+npx @pexcard_engineering/mcp
 ```
 
 Or install globally:
 
 ```bash
-npm install -g pex-mcp-server
+npm install -g @pexcard_engineering/mcp
 pex-mcp-server
 ```
 
@@ -44,7 +44,7 @@ Add to your `claude_desktop_config.json`:
   "mcpServers": {
     "pex": {
       "command": "npx",
-      "args": ["-y", "pex-mcp-server"],
+      "args": ["-y", "@pexcard_engineering/mcp"],
       "env": {
         "PEX_API_URL": "https://coreapi.pexcard.com/v4",
         "PEX_API_TOKEN": "your-api-token-here"
@@ -64,7 +64,7 @@ Add to your `claude_desktop_config.json`:
 Add the MCP server using the Claude Code CLI:
 
 ```bash
-claude mcp add pex -e PEX_API_URL=https://coreapi.pexcard.com/v4 -e PEX_API_TOKEN=your-api-token-here -- npx -y pex-mcp-server
+claude mcp add pex -e PEX_API_URL=https://coreapi.pexcard.com/v4 -e PEX_API_TOKEN=your-api-token-here -- npx -y @pexcard_engineering/mcp
 ```
 
 Or add it manually to your `.claude/settings.json`:
@@ -74,7 +74,7 @@ Or add it manually to your `.claude/settings.json`:
   "mcpServers": {
     "pex": {
       "command": "npx",
-      "args": ["-y", "pex-mcp-server"],
+      "args": ["-y", "@pexcard_engineering/mcp"],
       "env": {
         "PEX_API_URL": "https://coreapi.pexcard.com/v4",
         "PEX_API_TOKEN": "your-api-token-here"
@@ -95,7 +95,7 @@ Add the following to your VS Code settings (`.vscode/settings.json` or user sett
   "github.copilot.chat.mcpServers": {
     "pex": {
       "command": "npx",
-      "args": ["-y", "pex-mcp-server"],
+      "args": ["-y", "@pexcard_engineering/mcp"],
       "env": {
         "PEX_API_URL": "https://coreapi.pexcard.com/v4",
         "PEX_API_TOKEN": "your-api-token-here"
@@ -112,7 +112,7 @@ Alternatively, create an `.mcp.json` file in your project root:
   "servers": {
     "pex": {
       "command": "npx",
-      "args": ["-y", "pex-mcp-server"],
+      "args": ["-y", "@pexcard_engineering/mcp"],
       "env": {
         "PEX_API_URL": "https://coreapi.pexcard.com/v4",
         "PEX_API_TOKEN": "your-api-token-here"
@@ -268,21 +268,6 @@ Once connected, you can ask Claude things like:
 - "List all cards with their spending limits"
 - "What are the spending rules for card 12345?"
 - "Show me pending payments"
-
-## Development
-
-```bash
-# Clone and install
-git clone https://github.com/paborsan-pex/pex-mcp-server.git
-cd pex-mcp-server
-npm install
-
-# Build
-npm run build
-
-# Run locally
-PEX_API_URL=https://coreapi.pexcard.com/v4 PEX_API_TOKEN=your-token npm start
-```
 
 ## License
 
