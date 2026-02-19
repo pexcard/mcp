@@ -37,9 +37,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/pexcard/mcp"
   },
-  "homepage": "",
+  "homepage": "https://github.com/pexcard/mcp",
   "engines": {
     "node": ">=18.0.0"
   },
