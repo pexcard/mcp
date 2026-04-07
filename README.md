@@ -1,3 +1,5 @@
+[![npm version](https://img.shields.io/npm/v/@pexcard_engineering/mcp)](https://www.npmjs.com/package/@pexcard_engineering/mcp)
+
 # PEX MCP Server
 
 A Model Context Protocol (MCP) server that provides access to the [PEX Card External API](https://developer.pexcard.com/). Use this server to let AI assistants like Claude interact with your PEX business account, cards, transactions, and more.
